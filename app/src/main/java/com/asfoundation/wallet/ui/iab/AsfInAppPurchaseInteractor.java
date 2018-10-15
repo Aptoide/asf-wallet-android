@@ -161,7 +161,7 @@ public class AsfInAppPurchaseInteractor {
 
   private Payment map(BdsTransactionService.BdsTransaction transaction) {
     return new Payment(transaction.getKey(), mapStatus(transaction.getStatus()), null, null,
-        transaction.getPackageName(), null, null);
+        transaction.getPackageName(), null);
   }
 
   private Payment.Status mapStatus(BdsTransactionService.BdsTransaction.Status status) {
@@ -195,13 +195,13 @@ public class AsfInAppPurchaseInteractor {
     return new Payment(paymentTransaction.getUri(), mapStatus(paymentTransaction.getState()),
         paymentTransaction.getTransactionBuilder()
             .fromAddress(), paymentTransaction.getBuyHash(), paymentTransaction.getPackageName(),
-        paymentTransaction.getProductName(), paymentTransaction.getProductId());
+        paymentTransaction.getProductName());
   }
 
   @NonNull private Payment mapToPayment(ChannelPayment channelPayment) {
     return new Payment(channelPayment.getId(), mapStatus(channelPayment.getStatus()),
         channelPayment.getFromAddress(), channelPayment.getHash(), channelPayment.getPackageName(),
-        channelPayment.getProductName(), channelPayment.getProductId());
+        channelPayment.getProductName());
   }
 
   private Payment.Status mapStatus(ChannelPayment.Status status) {
@@ -262,7 +262,7 @@ public class AsfInAppPurchaseInteractor {
                 new GasSettings(gasSettings.gasPrice.multiply(new BigDecimal(GAS_PRICE_MULTIPLIER)),
                     paymentGasLimit))))
         .map(transactionBuilder -> new PaymentTransaction(uri, transactionBuilder, packageName,
-            productName, transactionBuilder.getSkuId(), developerPayload));
+            productName, developerPayload));
   }
 
   public void start() {
@@ -277,14 +277,13 @@ public class AsfInAppPurchaseInteractor {
             .map(channelPayment -> new Payment(channelPayment.getId(),
                 mapStatus(channelPayment.getStatus()), channelPayment.getFromAddress(),
                 channelPayment.getHash(), channelPayment.getPackageName(),
-                channelPayment.getProductName(), channelPayment.getProductId()))
+                channelPayment.getProductName()))
             .toList()), inAppPurchaseService.getAll()
         .flatMapSingle(paymentTransactions -> Observable.fromIterable(paymentTransactions)
             .map(paymentTransaction -> new Payment(paymentTransaction.getUri(),
                 mapStatus(paymentTransaction.getState()), paymentTransaction.getTransactionBuilder()
                 .fromAddress(), paymentTransaction.getBuyHash(),
-                paymentTransaction.getPackageName(), paymentTransaction.getProductName(),
-                paymentTransaction.getProductId()))
+                paymentTransaction.getPackageName(), paymentTransaction.getProductName()))
             .toList()));
   }
 

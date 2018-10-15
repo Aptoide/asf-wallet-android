@@ -15,7 +15,6 @@ public class Payment {
   private @Nullable final String uid;
   private @Nullable final String signature;
   private @Nullable final String signatureData;
-  private @Nullable final String productId;
 
   public Payment(String uri, Status status, String uid, String signature, String signatureData) {
     this.status = status;
@@ -27,10 +26,9 @@ public class Payment {
     this.uid = uid;
     this.signature = signature;
     this.signatureData = signatureData;
-    this.productId = null;
   }
   public Payment(String uri, Status status, @Nullable String fromAddress, @Nullable String buyHash,
-      @Nullable String packageName, @Nullable String productName, @Nullable String productId) {
+      @Nullable String packageName, @Nullable String productName) {
     this.status = status;
     this.uri = uri;
     this.fromAddress = fromAddress;
@@ -40,7 +38,6 @@ public class Payment {
     this.uid = null;
     this.signature = null;
     this.signatureData = null;
-    this.productId = productId;
   }
   public Payment(String uri, Status status) {
     this.uri = uri;
@@ -52,7 +49,6 @@ public class Payment {
     this.uid = null;
     this.signature = null;
     this.signatureData = null;
-    this.productId = null;
   }
 
   @Nullable public String getFromAddress() {
@@ -80,7 +76,15 @@ public class Payment {
   }
 
   public @Nullable String getProductId() {
-    return productId;
+    try {
+      return new String(Hex.decode(ERC681ParserKt.parseERC681(uri).getFunctionParams()
+          .get("data")
+          .substring(2)
+          .getBytes("UTF-8")));
+    } catch (UnsupportedEncodingException e) {
+      e.printStackTrace();
+      return null;
+    }
   }
 
   @Nullable public String getSignatureData() {
@@ -118,18 +122,6 @@ public class Payment {
         + '\''
         + ", productName='"
         + productName
-        + '\''
-        + ", uid='"
-        + uid
-        + '\''
-        + ", signature='"
-        + signature
-        + '\''
-        + ", signatureData='"
-        + signatureData
-        + '\''
-        + ", productId='"
-        + productId
         + '\''
         + '}';
   }

@@ -86,7 +86,7 @@ public class ChannelService {
                 .fromAddress(), paymentTransaction.getTransactionBuilder()
             .amount(), paymentTransaction.getTransactionBuilder()
             .toAddress(), paymentTransaction.getPackageName(),
-            paymentTransaction.getProductName(), paymentTransaction.getProductId()));
+            paymentTransaction.getProductName()));
   }
 
   public Observable<ChannelPayment> getPayment(String key) {
