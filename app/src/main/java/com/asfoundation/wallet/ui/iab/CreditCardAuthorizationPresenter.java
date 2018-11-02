@@ -20,6 +20,7 @@ import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.concurrent.TimeUnit;
 
+import static com.asfoundation.wallet.billing.analytics.BillingAnalytics.PAYMENT_METHOD_CC;
 import static com.asfoundation.wallet.ui.iab.ExpressCheckoutBuyFragment.serializeJson;
 
 /**
@@ -190,7 +191,10 @@ public class CreditCardAuthorizationPresenter {
                     .firstOrError()
                     .flatMap(adyenAuthorization -> buildBundle(billing))
                     .observeOn(viewScheduler)
-                    .doOnSuccess(navigator::popView)
+                    .doOnSuccess(bundle ->{
+                      sendPaymentEvent(PAYMENT_METHOD_CC);
+                      navigator.popView(bundle);
+                    })
                     .doOnSuccess(__ -> view.showSuccess()))
             .subscribe(__ -> {
             }, throwable -> showError(throwable)));

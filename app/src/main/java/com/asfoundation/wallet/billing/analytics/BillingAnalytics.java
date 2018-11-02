@@ -14,6 +14,9 @@ public class BillingAnalytics implements EventSender {
   private static final String EVENT_VALUE = "value";
   private static final String EVENT_PURCHASE= "purchase";
   private static final String EVENT_PAYMENT_METHOD = "payment_method";
+  public static final String PAYMENT_METHOD_REWARDS = "REWARDS";
+  public static final String PAYMENT_METHOD_APPC = "APPC";
+  public static final String PAYMENT_METHOD_CC = "CREDIT_CARD";
   private final AnalyticsManager analytics;
 
   public BillingAnalytics(AnalyticsManager analytics) {
