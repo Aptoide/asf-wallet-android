@@ -236,8 +236,7 @@ public class Transaction implements Parcelable {
         case 2:
           return PENDING;
         default:
-          return SUCCESS
+          return SUCCESS;
       }
     }
   }
-}
