@@ -74,5 +74,6 @@ import static org.mockito.Mockito.when;
   }
 
   @Test public void stop() {
-    airdrop.stop();
+    airdrop.stop()
   }
+}
