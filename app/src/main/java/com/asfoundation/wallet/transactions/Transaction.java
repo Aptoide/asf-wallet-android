@@ -184,7 +184,7 @@ public class Transaction implements Parcelable {
   }
 
   public String getFrom() {
-    return from
+    return from;
   }
 
   public String getTo() {
@@ -240,4 +240,3 @@ public class Transaction implements Parcelable {
       }
     }
   }
-}
