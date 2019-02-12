@@ -2,6 +2,8 @@ package com.asfoundation.wallet.di;
 
 import android.arch.persistence.room.Room;
 import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
 import cm.aptoide.analytics.AnalyticsManager;
 import com.appcoins.wallet.appcoins.rewards.AppcoinsRewards;
 import com.appcoins.wallet.appcoins.rewards.repository.BdsAppcoinsRewardsRepository;
@@ -124,6 +126,7 @@ import com.asfoundation.wallet.ui.airdrop.AirdropInteractor;
 import com.asfoundation.wallet.ui.airdrop.AppcoinsTransactionService;
 import com.asfoundation.wallet.ui.gamification.GamificationInteractor;
 import com.asfoundation.wallet.ui.gamification.LevelResourcesMapper;
+import com.asfoundation.wallet.ui.gamification.SharedPreferencesGamificationLocalData;
 import com.asfoundation.wallet.ui.iab.AppCoinsOperationMapper;
 import com.asfoundation.wallet.ui.iab.AppCoinsOperationRepository;
 import com.asfoundation.wallet.ui.iab.AppInfoProvider;
@@ -159,7 +162,6 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.concurrent.ConcurrentHashMap;
-import java.util.concurrent.ConcurrentSkipListSet;
 import java.util.concurrent.CopyOnWriteArrayList;
 import java.util.concurrent.TimeUnit;
 import javax.inject.Named;
@@ -674,6 +676,10 @@ import static com.asfoundation.wallet.service.AppsApi.API_BASE_URL;
     return new BillingMessagesMapper(new ExternalBillingSerializer());
   }
 
+  @Singleton @Provides SharedPreferences provideSharedPreferences(Context context) {
+    return PreferenceManager.getDefaultSharedPreferences(context);
+  }
+
   @Singleton @Provides PoASubmissionService providePoASubmissionService(OkHttpClient client) {
     String baseUrl = PoASubmissionService.SERVICE_HOST;
     PoASubmissionService.PoASubmissionApi api = new Retrofit.Builder().baseUrl(baseUrl)
@@ -685,7 +691,7 @@ import static com.asfoundation.wallet.service.AppsApi.API_BASE_URL;
     return new PoASubmissionService(api);
   }
 
-  @Provides Gamification provideGamification(OkHttpClient client) {
+  @Provides Gamification provideGamification(OkHttpClient client, SharedPreferences preferences) {
     String baseUrl = PoASubmissionService.SERVICE_HOST;
     GamificationApi api = new Retrofit.Builder().baseUrl(baseUrl)
         .client(client)
@@ -693,7 +699,8 @@ import static com.asfoundation.wallet.service.AppsApi.API_BASE_URL;
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
         .create(GamificationApi.class);
-    return new Gamification(new BdsGamificationRepository(api));
+    return new Gamification(new BdsGamificationRepository(api,
+        new SharedPreferencesGamificationLocalData(preferences)));
   }
 
   @Singleton @Provides BackendApi provideBackendApi(OkHttpClient client, Gson gson) {
