@@ -106,7 +106,7 @@ class CreateWalletFragment : DaggerFragment(), CreateWalletView {
   }
 
   override fun showLoading() {
-    create_wallet_group.visibility = View.INVISIBLE
+    provide_wallet_group.visibility = View.INVISIBLE
     create_wallet_animation.visibility = View.VISIBLE
     create_wallet_text.visibility = View.VISIBLE
     create_wallet_animation.playAnimation()
