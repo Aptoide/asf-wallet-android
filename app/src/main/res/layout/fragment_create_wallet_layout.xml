@@ -47,7 +47,7 @@
 
       <Button
           android:id="@+id/provide_wallet_create_wallet_button"
-          android:layout_width="96dp"
+          android:layout_width="wrap_content"
           android:layout_height="36dp"
           android:layout_alignParentBottom="true"
           android:layout_alignParentEnd="true"
@@ -59,12 +59,12 @@
 
       <Button
           android:id="@+id/provide_wallet_cancel"
-          android:layout_width="96dp"
+          android:layout_width="wrap_content"
           android:layout_height="36dp"
           android:layout_alignParentBottom="true"
-          android:layout_alignParentEnd="true"
           android:layout_marginBottom="16dp"
-          android:layout_marginEnd="124dp"
+          android:layout_marginEnd="8dp"
+          android:layout_toStartOf="@id/provide_wallet_create_wallet_button"
           android:text="@string/cancel"
           style="@style/CancelButtonStyle"
           />
