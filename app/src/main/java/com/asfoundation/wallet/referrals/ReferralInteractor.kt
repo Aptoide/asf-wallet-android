@@ -35,9 +35,17 @@ class ReferralInteractor(
         }
   }
 
-  override fun retrieveReferral(): Single<ReferralResponse> {
+  override fun retrieveReferral(): Single<ReferralsViewModel> {
     return defaultWallet.find()
         .flatMap { promotionsRepository.getReferralUserStatus(it.address) }
+        .map { map(it) }
+  }
+
+  private fun map(referralResponse: ReferralResponse): ReferralsViewModel {
+    return ReferralsViewModel(referralResponse.completed, referralResponse.link,
+        referralResponse.invited, referralResponse.pendingAmount, referralResponse.amount,
+        referralResponse.symbol, referralResponse.maxAmount, referralResponse.minAmount,
+        referralResponse.available, referralResponse.receivedAmount)
   }
 
   override fun saveReferralInformation(numberOfFriends: Int, isVerified: Boolean,
