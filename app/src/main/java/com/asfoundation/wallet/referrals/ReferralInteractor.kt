@@ -45,7 +45,7 @@ class ReferralInteractor(
     return ReferralsViewModel(referralResponse.completed, referralResponse.link,
         referralResponse.invited, referralResponse.pendingAmount, referralResponse.amount,
         referralResponse.symbol, referralResponse.maxAmount, referralResponse.minAmount,
-        referralResponse.available, referralResponse.receivedAmount)
+        referralResponse.available, referralResponse.receivedAmount, referralResponse.userStatus)
   }
 
   override fun saveReferralInformation(numberOfFriends: Int, isVerified: Boolean,
