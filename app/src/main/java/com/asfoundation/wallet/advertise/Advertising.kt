@@ -16,6 +16,10 @@ interface Advertising {
                         versionCode: Int): Single<ProofSubmissionData>
 
   fun retrievePoaInformation(address: String): Single<PoaInformationModel>
+
+  fun hasSeenPoaNotification(): Boolean
+  fun clearSeenPoaNotification()
+  fun saveSeenPoaNotification()
 }
 
 data class CampaignDetails(val responseCode: Advertising.CampaignAvailabilityType,

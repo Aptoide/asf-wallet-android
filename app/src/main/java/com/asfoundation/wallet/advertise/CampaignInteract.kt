@@ -6,6 +6,7 @@ import com.asfoundation.wallet.interact.CreateWalletInteract
 import com.asfoundation.wallet.interact.FindDefaultWalletInteract
 import com.asfoundation.wallet.poa.PoaInformationModel
 import com.asfoundation.wallet.poa.ProofSubmissionData
+import com.asfoundation.wallet.repository.PreferenceRepositoryType
 import com.asfoundation.wallet.repository.WalletNotFoundException
 import com.asfoundation.wallet.service.Campaign
 import com.asfoundation.wallet.service.CampaignService
@@ -17,7 +18,9 @@ class CampaignInteract(private val campaignService: CampaignService,
                        private val walletService: WalletService,
                        private val createWalletInteract: CreateWalletInteract,
                        private val errorMapper: AdvertisingThrowableCodeMapper,
-                       private val defaultWalletInteract: FindDefaultWalletInteract) : Advertising {
+                       private val defaultWalletInteract: FindDefaultWalletInteract,
+                       private val sharedPreferenceRepository: PreferenceRepositoryType) :
+    Advertising {
 
   override fun getCampaign(packageName: String, versionCode: Int): Single<CampaignDetails> {
     return walletService.getWalletAddress()
@@ -90,4 +93,24 @@ class CampaignInteract(private val campaignService: CampaignService,
     return campaignService.retrievePoaInformation(address)
   }
 
+  /**
+   * Checks if the user has seen the Poa notification in the last 12h
+   */
+  override fun hasSeenPoaNotification(): Boolean {
+    val savedTime = sharedPreferenceRepository.getPoaNotifiationSeenTime()
+    if (savedTime != (-1).toLong()) {
+      val currentTime = System.currentTimeMillis()
+      val timeToShowNextNotificationInMillis = 3600000 * 12
+      return currentTime >= savedTime + timeToShowNextNotificationInMillis
+    }
+    return false
+  }
+
+  override fun clearSeenPoaNotification() {
+    sharedPreferenceRepository.clearPoaNotificationSeenTime()
+  }
+
+  override fun saveSeenPoaNotification() {
+    sharedPreferenceRepository.setPoaNotificationSeenTime(System.currentTimeMillis())
+  }
 }

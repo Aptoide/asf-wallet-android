@@ -32,7 +32,16 @@ internal class AppCoinsAdvertisingBinder(
     val pkg = packageManager.getNameForUid(uid)
     val pkgInfo = packageManager.getPackageInfo(pkg, 0)
     return campaignInteract.getCampaign(pkg, pkgInfo.versionCode)
-        .doOnSuccess { if (it.hasReachedPoaLimit()) showNotification(it, pkgInfo) }
+        .doOnSuccess {
+          if (it.hasReachedPoaLimit()) {
+            if (!campaignInteract.hasSeenPoaNotification()) {
+              showNotification(it, pkgInfo)
+              campaignInteract.saveSeenPoaNotification()
+            }
+          } else {
+            campaignInteract.clearSeenPoaNotification()
+          }
+        }
         .map { mapCampaignDetails(it) }
         .blockingGet()
   }

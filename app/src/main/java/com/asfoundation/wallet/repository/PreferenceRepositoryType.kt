@@ -11,4 +11,7 @@ interface PreferenceRepositoryType {
   fun isFirstTimeOnTransactionActivity(): Boolean
   fun setFirstTimeOnTransactionActivity()
 
+  fun setPoaNotificationSeenTime(currentTimeInMillis: Long)
+  fun getPoaNotifiationSeenTime(): Long
+  fun clearPoaNotificationSeenTime()
 }
