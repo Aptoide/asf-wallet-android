@@ -192,7 +192,7 @@ public class WalletPoAService extends Service {
         //No campaign or already rewarded so there is no need to notify the user of anything
         proofOfAttentionService.remove(packageName);
         if (proof.hasReachedPoaLimit()) {
-          if (!campaignInteract.hasSeenPoaNotification()) {
+          if (campaignInteract.hasSeenPoaNotificationTimePassed()) {
             showNotification(proof);
             campaignInteract.saveSeenPoaNotification();
             stopForeground(false);

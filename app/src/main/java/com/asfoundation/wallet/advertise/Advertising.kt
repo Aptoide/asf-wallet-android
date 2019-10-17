@@ -17,7 +17,7 @@ interface Advertising {
 
   fun retrievePoaInformation(address: String): Single<PoaInformationModel>
 
-  fun hasSeenPoaNotification(): Boolean
+  fun hasSeenPoaNotificationTimePassed(): Boolean
   fun clearSeenPoaNotification()
   fun saveSeenPoaNotification()
 }

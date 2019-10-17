@@ -96,14 +96,14 @@ class CampaignInteract(private val campaignService: CampaignService,
   /**
    * Checks if the user has seen the Poa notification in the last 12h
    */
-  override fun hasSeenPoaNotification(): Boolean {
+  override fun hasSeenPoaNotificationTimePassed(): Boolean {
     val savedTime = sharedPreferenceRepository.getPoaNotifiationSeenTime()
     if (savedTime != (-1).toLong()) {
       val currentTime = System.currentTimeMillis()
       val timeToShowNextNotificationInMillis = 3600000 * 12
       return currentTime >= savedTime + timeToShowNextNotificationInMillis
     }
-    return false
+    return true
   }
 
   override fun clearSeenPoaNotification() {

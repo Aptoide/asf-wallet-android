@@ -34,7 +34,7 @@ internal class AppCoinsAdvertisingBinder(
     return campaignInteract.getCampaign(pkg, pkgInfo.versionCode)
         .doOnSuccess {
           if (it.hasReachedPoaLimit()) {
-            if (!campaignInteract.hasSeenPoaNotification()) {
+            if (campaignInteract.hasSeenPoaNotificationTimePassed()) {
               showNotification(it, pkgInfo)
               campaignInteract.saveSeenPoaNotification()
             }
