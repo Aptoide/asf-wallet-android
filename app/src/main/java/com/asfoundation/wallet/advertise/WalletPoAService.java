@@ -196,6 +196,8 @@ public class WalletPoAService extends Service {
             showNotification(proof);
             campaignInteract.saveSeenPoaNotification();
             stopForeground(false);
+          } else {
+            stopForeground(true);
           }
         } else {
           campaignInteract.clearSeenPoaNotification();
