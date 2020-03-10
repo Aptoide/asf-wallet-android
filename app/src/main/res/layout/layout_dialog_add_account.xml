@@ -27,7 +27,7 @@
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center_vertical|start"
         android:layout_marginEnd="@dimen/big_margin"
         android:layout_marginStart="@dimen/big_margin"
         android:contentDescription="@string/action_create_new_account"
@@ -56,7 +56,7 @@
     <ImageView
         android:layout_width="24dp"
         android:layout_height="24dp"
-        android:layout_gravity="center_vertical"
+        android:layout_gravity="center_vertical|start"
         android:layout_marginEnd="@dimen/big_margin"
         android:layout_marginStart="@dimen/big_margin"
         android:contentDescription="@string/action_import"
