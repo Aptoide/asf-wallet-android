@@ -3,6 +3,7 @@ package com.asfoundation.wallet.ui.iab;
 import android.content.Context;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.content.pm.PackageManager.NameNotFoundException;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
@@ -24,12 +25,16 @@ import androidx.appcompat.widget.AppCompatRadioButton;
 import androidx.constraintlayout.widget.Group;
 import androidx.fragment.app.Fragment;
 import com.appcoins.wallet.bdsbilling.Billing;
-import com.asf.wallet.R;
+import com.asf.wallet.R.dimen;
+import com.asf.wallet.R.id;
+import com.asf.wallet.R.layout;
+import com.asf.wallet.R.string;
 import com.asfoundation.wallet.GlideApp;
 import com.asfoundation.wallet.analytics.RakamAnalytics;
 import com.asfoundation.wallet.billing.adyen.PaymentType;
 import com.asfoundation.wallet.billing.analytics.BillingAnalytics;
 import com.asfoundation.wallet.entity.TransactionBuilder;
+import com.asfoundation.wallet.logging.Logger;
 import com.asfoundation.wallet.repository.BdsPendingTransactionService;
 import com.asfoundation.wallet.ui.balance.BalanceInteract;
 import com.asfoundation.wallet.ui.gamification.GamificationInteractor;
@@ -79,8 +84,9 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
   @Inject BalanceInteract balanceInteractor;
   @Inject WalletBlockedInteract walletBlockedInteract;
   @Inject CurrencyFormatUtils formatter;
+  private final List<PaymentMethod> paymentMethodList = new ArrayList<>();
   private PaymentMethodsPresenter presenter;
-  private List<PaymentMethod> paymentMethodList = new ArrayList<>();
+  @Inject Logger logger;
   private ProgressBar loadingView;
   private View dialog;
   private TextView errorMessage;
@@ -173,54 +179,54 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
         Schedulers.io(), new CompositeDisposable(), inAppPurchaseInteractor, balanceInteractor,
         inAppPurchaseInteractor.getBillingMessagesMapper(), bdsPendingTransactionService, billing,
         analytics, analyticsSetup, isBds, developerPayload, uri, gamification, transaction,
-        paymentMethodsMapper, walletBlockedInteract, transactionValue, formatter);
+        paymentMethodsMapper, walletBlockedInteract, transactionValue, formatter, logger);
   }
 
   @Nullable @Override
   public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container,
       @Nullable Bundle savedInstanceState) {
-    return inflater.inflate(R.layout.payment_methods_layout, container, false);
+    return inflater.inflate(layout.payment_methods_layout, container, false);
   }
 
   @Override public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
     super.onViewCreated(view, savedInstanceState);
 
-    mainView = view.findViewById(R.id.payment_method_main_view);
-    radioGroup = view.findViewById(R.id.payment_methods_radio_group);
-    loadingView = view.findViewById(R.id.loading_view);
-    dialog = view.findViewById(R.id.payment_methods);
-    errorView = view.findViewById(R.id.error_message);
-    errorMessage = view.findViewById(R.id.activity_iab_error_message);
-    processingDialog = view.findViewById(R.id.processing_loading);
-    appIcon = view.findViewById(R.id.app_icon);
-    buyButton = view.findViewById(R.id.buy_button);
-    cancelButton = view.findViewById(R.id.cancel_button);
-    errorDismissButton = view.findViewById(R.id.activity_iab_error_ok_button);
+    mainView = view.findViewById(id.payment_method_main_view);
+    radioGroup = view.findViewById(id.payment_methods_radio_group);
+    loadingView = view.findViewById(id.loading_view);
+    dialog = view.findViewById(id.payment_methods);
+    errorView = view.findViewById(id.error_message);
+    errorMessage = view.findViewById(id.activity_iab_error_message);
+    processingDialog = view.findViewById(id.processing_loading);
+    appIcon = view.findViewById(id.app_icon);
+    buyButton = view.findViewById(id.buy_button);
+    cancelButton = view.findViewById(id.cancel_button);
+    errorDismissButton = view.findViewById(id.activity_iab_error_ok_button);
 
-    appcPriceTv = view.findViewById(R.id.appc_price);
-    fiatPriceTv = view.findViewById(R.id.fiat_price);
-    appNameTv = view.findViewById(R.id.app_name);
-    appSkuDescriptionTv = view.findViewById(R.id.app_sku_description);
+    appcPriceTv = view.findViewById(id.appc_price);
+    fiatPriceTv = view.findViewById(id.fiat_price);
+    appNameTv = view.findViewById(id.app_name);
+    appSkuDescriptionTv = view.findViewById(id.app_sku_description);
 
-    bonusView = view.findViewById(R.id.bonus_layout);
-    bonusMsg = view.findViewById(R.id.bonus_msg);
-    noBonusMsg = view.findViewById(R.id.no_bonus_msg);
-    bottomSeparator = view.findViewById(R.id.bottom_separator);
+    bonusView = view.findViewById(id.bonus_layout);
+    bonusMsg = view.findViewById(id.bonus_msg);
+    noBonusMsg = view.findViewById(id.no_bonus_msg);
+    bottomSeparator = view.findViewById(id.bottom_separator);
 
-    bonusValue = view.findViewById(R.id.bonus_value);
+    bonusValue = view.findViewById(id.bonus_value);
     buyButton.setEnabled(false);
-    iconSize = getResources().getDimensionPixelSize(R.dimen.payment_method_icon_size);
+    iconSize = getResources().getDimensionPixelSize(dimen.payment_method_icon_size);
 
-    paymentMethodsGroup = view.findViewById(R.id.payment_methods_list_group);
-    preSelectedPaymentMethodGroup = view.findViewById(R.id.pre_selected_payment_method_group);
-    morePaymentMethods = view.findViewById(R.id.more_payment_methods);
+    paymentMethodsGroup = view.findViewById(id.payment_methods_list_group);
+    preSelectedPaymentMethodGroup = view.findViewById(id.pre_selected_payment_method_group);
+    morePaymentMethods = view.findViewById(id.more_payment_methods);
 
-    preSelectedMethodView = view.findViewById(R.id.layout_pre_selected);
-    preSelectedIcon = preSelectedMethodView.findViewById(R.id.payment_method_ic);
-    preSelectedName = preSelectedMethodView.findViewById(R.id.payment_method_description);
+    preSelectedMethodView = view.findViewById(id.layout_pre_selected);
+    preSelectedIcon = preSelectedMethodView.findViewById(id.payment_method_ic);
+    preSelectedName = preSelectedMethodView.findViewById(id.payment_method_description);
     preSelectedNameSingle =
-        preSelectedMethodView.findViewById(R.id.payment_method_description_single);
-    preSelectedDescription = preSelectedMethodView.findViewById(R.id.payment_method_secondary);
+        preSelectedMethodView.findViewById(id.payment_method_description_single);
+    preSelectedDescription = preSelectedMethodView.findViewById(id.payment_method_secondary);
 
     setupAppNameAndIcon();
 
@@ -294,8 +300,7 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
     throw new IllegalArgumentException("previous app package name not found");
   }
 
-  private CharSequence getApplicationName(String appPackage)
-      throws PackageManager.NameNotFoundException {
+  private CharSequence getApplicationName(String appPackage) throws NameNotFoundException {
     PackageManager packageManager = getContext().getPackageManager();
     ApplicationInfo packageInfo = packageManager.getApplicationInfo(appPackage, 0);
     return packageManager.getApplicationLabel(packageInfo);
@@ -353,7 +358,7 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
       });
     }
     errorView.setVisibility(View.VISIBLE);
-    errorMessage.setText(R.string.purchase_error_incomplete_transaction_body);
+    errorMessage.setText(string.purchase_error_incomplete_transaction_body);
   }
 
   @Override public void finish(Bundle bundle) {
@@ -437,7 +442,7 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
         transaction.getType(), selectedPaymentMethod);
   }
 
-  @NotNull @Override public Observable<String> getPaymentSelection() {
+  @Override public @NotNull Observable<String> getPaymentSelection() {
     return Observable.merge(RxRadioGroup.checkedChanges(radioGroup)
         .filter(checkedRadioButtonId -> checkedRadioButtonId >= 0)
         .map(checkedRadioButtonId -> paymentMethodList.get(checkedRadioButtonId)
@@ -471,7 +476,7 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
     scaledBonus = scaledBonus.max(new BigDecimal("0.01"));
     String formattedBonus = formatter.formatCurrency(scaledBonus, WalletCurrency.FIAT);
     bonusMessageValue = currency + formattedBonus;
-    bonusValue.setText(getString(R.string.gamification_purchase_header_part_2, bonusMessageValue));
+    bonusValue.setText(getString(string.gamification_purchase_header_part_2, bonusMessageValue));
     showBonus();
   }
 
@@ -480,7 +485,7 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
   }
 
   @Override public void showNext() {
-    buyButton.setText(R.string.action_next);
+    buyButton.setText(string.action_next);
   }
 
   @Override public void showBuy() {
@@ -534,7 +539,7 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
   }
 
   private void setBuyButtonText() {
-    int buyButtonText = isDonation ? R.string.action_donate : R.string.action_buy;
+    int buyButtonText = isDonation ? string.action_donate : string.action_buy;
     buyButton.setText(buyButtonText);
   }
 
@@ -547,12 +552,12 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
     fiatPriceTv.setText(priceText);
     appcPriceTv.setVisibility(View.VISIBLE);
     fiatPriceTv.setVisibility(View.VISIBLE);
-    int buyButtonText = isDonation ? R.string.action_donate : R.string.action_buy;
+    int buyButtonText = isDonation ? string.action_donate : string.action_buy;
     buyButton.setText(getResources().getString(buyButtonText));
 
     if (isDonation) {
-      appSkuDescriptionTv.setText(getResources().getString(R.string.item_donation));
-      appNameTv.setText(getResources().getString(R.string.item_donation));
+      appSkuDescriptionTv.setText(getResources().getString(string.item_donation));
+      appNameTv.setText(getResources().getString(string.item_donation));
     } else if (productName != null) {
       appSkuDescriptionTv.setText(productName);
     }
@@ -574,7 +579,7 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
         .observeOn(AndroidSchedulers.mainThread())
         .doOnNext(drawable -> {
           Drawable newOptionIcon = showNew ? getContext().getResources()
-              .getDrawable(R.drawable.ic_new_option) : null;
+              .getDrawable(drawable.ic_new_option) : null;
           radioButton.setCompoundDrawablesWithIntrinsicBounds(drawable, null, newOptionIcon, null);
         })
         .subscribe(__ -> {
@@ -663,7 +668,7 @@ public class PaymentMethodsFragment extends DaggerFragment implements PaymentMet
 
   private AppCompatRadioButton createPaymentRadioButton(PaymentMethod paymentMethod, int index) {
     AppCompatRadioButton radioButton = (AppCompatRadioButton) getActivity().getLayoutInflater()
-        .inflate(R.layout.payment_radio_button, null);
+        .inflate(layout.payment_radio_button, null);
     radioButton.setText(paymentMethod.getLabel());
     radioButton.setId(index);
     loadIcons(paymentMethod, radioButton, false);
