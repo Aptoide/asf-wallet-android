@@ -840,9 +840,8 @@
   <string name="card_verification_code_example_date">လႊဲသည့္ေန႔စြဲ</string>
   <string name="card_verification_code_example_description">ေဖာ္ျပခ်က္</string>
   <string name="card_verification_code_example_amount">ပမာဏ</string>
-  <string name="card_verification_code_example_code">သီးျခားကုဒ္</string>
-  <string name="card_verification_code_example_expiry">၃ ရက္ၾကာလွ်င္ သက္တမ္းကုန္သည္။</string>
-  <string name="card_verification_code_enter_title">ဂဏန္း ၄ လံုးပါကုဒ္ကိုထည့္ပါ</string>
+  <string name="card_verification_code_example_code">Unique code.\nExpires in %s days.</string>
+  <string name="card_verification_code_enter_title">Enter the %s digits code</string>
   <plurals name="card_verification_code_enter_hours_body">
     <item quantity="other">ကုဒ္ကို သင္အတည္ျပဳၿပီးေနာက္ %2$s နာရီအတြင္း %1$s ကို ျပန္အမ္းေပးပါမည္။</item>
   </plurals>
