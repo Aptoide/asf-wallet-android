@@ -27,7 +27,7 @@
   <string name="low_storage_error">Nicht genügend Speicherplatz</string>
   <string name="no_camera_permission_title">Kamera-Berechtigung</string>
   <string name="no_camera_permission">Zum Lesen des QR-Codes benötigt AppCoins BDS Wallet Zugriff auf deine Kamera.</string>
-  <string name="no_camera_available">No camera available!</string>
+  <string name="no_camera_available">Keine Kamera verfügbar!</string>
   <string name="ok">Okay</string>
   <string name="barcode_error_format">Ungültiges Barcode-Format: %s</string>
   <string name="title_delete_account">Sind Sie sicher das Sie das Wallet entfernen wollen?</string>
@@ -117,7 +117,7 @@
   <string name="intro_3_body">Erledigen Sie alle ihre In-App Einkäufe durch ihre bevorzugte Bezahlmethode.</string>
   <string name="intro_4_title">Sicher und Privat</string>
   <string name="intro_4_body">Ihre privaten Schlüssel werden nie ihr Gerät verlassen, ihre AppCoins sind also zu jeder Zeit sicher.</string>
-  <string name="intro_4_body_2">All your transactions are always safe thanks to the latest technology.</string>
+  <string name="intro_4_body_2">Dank der neuesten Technologie sind ihre Transaktionen immer sicher.</string>
   <string name="intro_5_title">Erhalten Sie gratis AppCoins Credits!</string>
   <string name="intro_5_body">Sie erhalten gratis AppCoins Credits in dem Spiele und Apps ausprobieren.</string>
   <string name="intro_creating_wallet_short">Ihr Wallet wird für Sie eingerichtet&#8230;</string>
@@ -225,7 +225,7 @@
   <string name="transaction_status_success">Geschafft</string>
   <string name="transaction_status_pending">Ausstehend</string>
   <string name="transaction_status_failed">Fehlgeschlagen</string>
-  <string name="transaction_status_reverted">Reverted</string>
+  <string name="transaction_status_reverted">Zurückgeleited</string>
   <string name="transaction_type_iab">In-App-Kauf</string>
   <string name="transaction_type_poa">Prämie</string>
   <string name="transaction_type_poa_offchain">@string/transaction_type_poa</string>
@@ -239,7 +239,7 @@
   <string name="transaction_type_reverted_topup_body">Ihre Aufladung bei %s wurde zurückerstattet. Für weitere Informationen nehmen Sie bitte Kontakt zum Kundensupport auf.</string>
   <string name="transaction_type_reverted_purchase_title">Einkauf Zurückerstattung</string>
   <string name="transaction_type_reverted_purchase_body">Ihr Einkauf bei %s wurde zurückerstattet. Für weitere Informationen nehmen Sie bitte Kontakt zum Kundensupport auf.</string>
-  <string name="transaction_reverted_view_original_header">Original Transaction</string>
+  <string name="transaction_reverted_view_original_header">Original-Transaktion</string>
   <string name="transaction_type_p2p">@string/transaction_type_standard</string>
   <string name="transaction_details_brand_txt">Powered By Ethereum</string>
   <string name="transaction_close_channel_btn_txt">close channel</string>
@@ -408,11 +408,11 @@
   <string name="common_or">ODER</string>
   <string name="share_via">Teilen über:</string>
   <string name="password">Passwort</string>
-  <string name="repeat_password">Repeat password</string>
-  <string name="turn_on_button">Turn on</string>
-  <string name="no_thanks_button">No,thanks</string>
-  <string name="remind_later_button">Remind me later</string>
-  <string name="get_code_button">Get code</string>
+  <string name="repeat_password">Paswort wiederholen</string>
+  <string name="turn_on_button">Einschalten</string>
+  <string name="no_thanks_button">Nein,danke</string>
+  <string name="remind_later_button">Erinnern Sie mich später daran</string>
+  <string name="get_code_button">Einen Code erhalten</string>
   <string name="confirm_button">Bestätigen</string>
   <!--Onboarding-->
   <string name="terms_and_conditions_tickbox">Ich stimme den %1$s und der %2$s des AppCoins Wallets zu.</string>
@@ -427,7 +427,7 @@
   <string name="title_redeem">Code einlösen</string>
   <string name="settings_item_support">Support Team kontaktieren</string>
   <string name="settings_subheader_support">Support</string>
-  <string name="settings_subheader_about_us">About Us</string>
+  <string name="settings_subheader_about_us">Über uns</string>
   <!--Local Payments-->
   <string name="local_payments_inprogress_header">Verarbeitung läuft&#8230;</string>
   <string name="local_payments_inprogress_body">So wie Sie die Bezahlung abgeschlossen haben, werden die AppCoins auf ihrem Wallet gutgeschrieben, danach gehen Sie zurück zu ihrem Spiel und tätigen den Einkauf!</string>
@@ -461,8 +461,8 @@
   <string name="verification_error_time_expired">Upps, ihr Zeitfenster ist abgelaufen. Bitte starten Sie erneut!</string>
   <string name="verification_error_attempts_reached">Sie haben die maximale Anzahl von Versuchen erreicht. Bitte warten Sie bevor Sie es erneut versuchen.</string>
   <string name="verified_tag">Überprüft</string>
-  <string name="unferified_tag">Unverified wallet</string>
-  <string name="verification_wallets_verify_button">Verify</string>
+  <string name="unferified_tag">Nicht verifiziertes Wallet</string>
+  <string name="verification_wallets_verify_button">Verifiziert</string>
   <!--Purchase Flow-->
   <string name="purchase_error_incomplete_transaction_body">Wie es scheint wurde dieser Einkauf bereits verarbeitet. Bitte warten Sie ab, bis die Transaktion verarbeitet wurde oder kontaktieren Sie ihren Kunden-Support.</string>
   <string name="purchase_more_payment_methods_button">ANDERE BEZAHL-METHODEN</string>
@@ -493,8 +493,8 @@
   <string name="purchase_card_error_wrong_CVV">Scheinbar ist ihr CVV/CVC-Code nicht korrekt. Bitte geben Sie ihn erneut ein.</string>
   <string name="purchase_wallet_error_contact_us">Upps, etwas ist mit dem Wallet nicht in Ordnung, bitte nehmen Sie Kontakt mit uns auf.</string>
   <string name="purchase_carrier_error">Ihre Telefonnummer ist nicht kompatibel zu dieser Bezahlmethode.</string>
-  <string name="purchase_carrier_error_minimum">Your carrier doesn\'t support payments for less than %s.</string>
-  <string name="purchase_carrier_error_maximum">Your carrier doesn\'t support payments for more than %s.</string>
+  <string name="purchase_carrier_error_minimum">Ihr Zahlungsdienstleister unterstützt keinen Zahlungen mit einem Wert von unter %s.</string>
+  <string name="purchase_carrier_error_maximum">Ihr Zahlungsdienstleister unterstützt keinen Zahlungen mit einem Wert von über %s.</string>
   <string name="purchase_error_fraud_code_20">Hoppla, wir haben Probleme mit diesem Einkauf, nehmen Sie bitte Kontakt zu uns auf.</string>
   <string name="purchase_error_wallet_block_code_403">Upps, etwas ist mit dem Wallet nicht in Ordnung, bitte nehmen Sie Kontakt mit uns auf.</string>
   <string name="purchase_card_error_CVV">Falscher CVV/CVC-Code</string>
