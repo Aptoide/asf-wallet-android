@@ -844,8 +844,8 @@
   <string name="card_verification_code_example_date">Trans. Date</string>
   <string name="card_verification_code_example_description">Description</string>
   <string name="card_verification_code_example_amount">Ποσό</string>
-  <string name="card_verification_code_example_code">Unique code.\nExpires in %s days.</string>
-  <string name="card_verification_code_enter_title">Enter the %s digits code</string>
+  <string name="card_verification_code_example_code">Μοναδικός κωδικός.\nΛήγει σε %s ημέρες.</string>
+  <string name="card_verification_code_enter_title">Εισαγάγετε τον κωδικό %s ψηφίων</string>
   <plurals name="card_verification_code_enter_hours_body">
     <item quantity="one">%1$s will be refunded within %2$s hour after you confirm the code.</item>
     <item quantity="other">%1$s will be refunded within %2$s hours after you confirm the code.</item>
@@ -862,9 +862,9 @@
   <!--Vouchers-->
   <string name="voucher_card_body">Buy this voucher and get up to %s%% bonus.</string>
   <string name="voucher_buy_header">Voucher for %s</string>
-  <string name="voucher_buy_no_game_title">Don\'t you have %s?</string>
+  <string name="voucher_buy_no_game_title">Δεν έχετε %s;</string>
   <string name="voucher_buy_no_game_install_button">DOWNLOAD NOW</string>
-  <string name="voucher_code_title">Voucher Code</string>
-  <string name="voucher_instructions_body">Go to %s and use the code to redeem your voucher.</string>
-  <string name="voucher_instructions_transactions">You can always find the voucher code in the transaction history.</string>
+  <string name="voucher_code_title">Κωδικός Κουπονιού</string>
+  <string name="voucher_instructions_body">Μεταβείτε στο %s και χρησιμοποιήστε τον κωδικό για να εξαργυρώσετε το κουπόνι σας.</string>
+  <string name="voucher_instructions_transactions">Ο κωδικός κουπονιού είναι πάντα διαθέσιμος στο ιστορικό συναλλαγών.</string>
 </resources>
