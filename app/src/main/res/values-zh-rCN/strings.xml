@@ -808,7 +808,7 @@
   <string name="perks_level_up_amount_left">您还要%1$s %2$s升到下一级！</string>
   <string name="perks_level_up_level_tag">%s级</string>
   <string name="perks_bonus_purchase_flow">%1$s奖励：%2$s 的AppCoins积金</string>
-  <string name="perks_purchases_disclaimer_body">所有通过AppCoins积金以外的任何购买方式进行的应用内购买和充值都将可以提升奖金等级并获得奖励。</string>
+  <string name="perks_purchases_disclaimer_body">除AppCoins积金以外，通过任何购买方式进行的所有应用内购买和充值都将可以提升奖金等级并获得奖励。</string>
   <!--Fingerprint Authentication-->
   <string name="fingerprint_settings">指纹锁</string>
   <string name="fingerprint_failed_title">身份验证失败！</string>
