@@ -232,7 +232,7 @@
   <string name="transaction_type_standard">Transferir</string>
   <string name="transaction_type_bonus">Bônus</string>
   <string name="transaction_type_voucher">e-Voucher</string>
-  <string name="transaction_type_voucher_title">Voucher for %s</string>
+  <string name="transaction_type_voucher_title">Voucher para %s</string>
   <string name="transaction_type_reverted_bonus_title">Bônus Revertido</string>
   <string name="transaction_type_reverted_bonus_body">O bônus que você recebeu em %s foi revertido. Contate o Suporte para obter mais informações.</string>
   <string name="transaction_type_reverted_topup_title">Reembolso de Recarga</string>
@@ -836,35 +836,35 @@
   <string name="rate_us_possitive_rate_button">AVALIE O APPCOINS WALLET</string>
   <string name="rate_us_possitive_done_title">Obrigado pelo seu feedback!</string>
   <!--Card verification-->
-  <string name="card_verification_body">Use your credit/debit card to verify your wallet.</string>
-  <string name="card_verification_charde_disclaimer">We\'ll charge %s to your card, and we\'ll refund it once you confirm the code.</string>
-  <string name="card_verification_code_title">Check the code in the transaction details</string>
-  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issues.</string>
-  <string name="card_verification_code_example_title">Example of Transaction Summary</string>
-  <string name="card_verification_code_example_date">Trans. Date</string>
-  <string name="card_verification_code_example_description">Description</string>
+  <string name="card_verification_body">Utilize seu cartão de crédito/débito para verificar sua wallet.</string>
+  <string name="card_verification_charde_disclaimer">Cobraremos %s em seu cartão, que será reembolsado assim que você confirmar o código.</string>
+  <string name="card_verification_code_title">Verifique o código nos detalhes da transação</string>
+  <string name="card_verification_code_body">Um código exclusivo será exibido no resumo da transação fornecido pelo emissor do seu cartão.</string>
+  <string name="card_verification_code_example_title">Exemplo de Resumo de Transação</string>
+  <string name="card_verification_code_example_date">Data da Transação</string>
+  <string name="card_verification_code_example_description">Descrição</string>
   <string name="card_verification_code_example_amount">Quantia</string>
-  <string name="card_verification_code_example_code">Unique code.\nExpires in %s days.</string>
-  <string name="card_verification_code_enter_title">Enter the %s digits code</string>
+  <string name="card_verification_code_example_code">Código único.\nExpira em %s dias.</string>
+  <string name="card_verification_code_enter_title">Digite o código de %s dígitos</string>
   <plurals name="card_verification_code_enter_hours_body">
-    <item quantity="one">%1$s will be refunded within %2$s hour after you confirm the code.</item>
-    <item quantity="other">%1$s will be refunded within %2$s hours after you confirm the code.</item>
+    <item quantity="one">%1$s será reembolsado em %2$s hora após a confirmação do código.</item>
+    <item quantity="other">%1$s será reembolsado em %2$s horas após a confirmação do código.</item>
   </plurals>
   <plurals name="card_verification_code_enter_days_body">
-    <item quantity="one">%1$s will be refunded within %2$s day after you confirm the code.</item>
-    <item quantity="other">%1$s will be refunded within %2$s days after you confirm the code.</item>
+    <item quantity="one">%1$s será reembolsado em %2$s dia após a confirmação do código.</item>
+    <item quantity="other">%1$s será reembolsado em %2$s dias após a confirmação do código.</item>
   </plurals>
-  <string name="card_verification_code_other_card_button">Try with another card</string>
-  <string name="card_verification_code_wrong_error">Wrong code</string>
-  <string name="card_verification_wallets_one_step_title">One more step to validate</string>
-  <string name="card_verification_wallets_one_step_body">Insert the code that appears in the transaction details.</string>
-  <string name="card_verification_wallets_insert_bode_button">Insert code</string>
+  <string name="card_verification_code_other_card_button">Tente com outro cartão</string>
+  <string name="card_verification_code_wrong_error">Código incorreto</string>
+  <string name="card_verification_wallets_one_step_title">Mais uma etapa para validar</string>
+  <string name="card_verification_wallets_one_step_body">Insira o código que aparece nos detalhes da transação.</string>
+  <string name="card_verification_wallets_insert_bode_button">Inserir código</string>
   <!--Vouchers-->
-  <string name="voucher_card_body">Buy this voucher and get up to %s%% bonus.</string>
-  <string name="voucher_buy_header">Voucher for %s</string>
-  <string name="voucher_buy_no_game_title">Don\'t you have %s?</string>
-  <string name="voucher_buy_no_game_install_button">DOWNLOAD NOW</string>
-  <string name="voucher_code_title">Voucher Code</string>
-  <string name="voucher_instructions_body">Go to %s and use the code to redeem your voucher.</string>
-  <string name="voucher_instructions_transactions">You can always find the voucher code in the transaction history.</string>
+  <string name="voucher_card_body">Compre este voucher e receba até %s%% de bônus.</string>
+  <string name="voucher_buy_header">Voucher para %s</string>
+  <string name="voucher_buy_no_game_title">Você não tem o %s?</string>
+  <string name="voucher_buy_no_game_install_button">BAIXAR AGORA</string>
+  <string name="voucher_code_title">Código do Voucher</string>
+  <string name="voucher_instructions_body">Acesse %s e use o código para resgatar seu voucher.</string>
+  <string name="voucher_instructions_transactions">Você sempre encontrará o código do voucher no histórico de transações.</string>
 </resources>
