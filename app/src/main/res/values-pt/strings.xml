@@ -225,7 +225,7 @@
   <string name="transaction_status_success">Sucesso</string>
   <string name="transaction_status_pending">Pendente</string>
   <string name="transaction_status_failed">Falhou</string>
-  <string name="transaction_status_reverted">Revertidas</string>
+  <string name="transaction_status_reverted">Revertida</string>
   <string name="transaction_type_iab">Compras Integradas</string>
   <string name="transaction_type_poa">Recompensa</string>
   <string name="transaction_type_poa_offchain">@string/transaction_type_poa</string>
