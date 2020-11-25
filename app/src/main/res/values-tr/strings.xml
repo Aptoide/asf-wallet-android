@@ -410,7 +410,7 @@
   <string name="password">Şifre</string>
   <string name="repeat_password">Şifreyi tekrarlayın</string>
   <string name="turn_on_button">Aç</string>
-  <string name="no_thanks_button">Hayır, teşekkürler</string>
+  <string name="no_thanks_button">No, thanks</string>
   <string name="remind_later_button">Daha sonra hatırlat</string>
   <string name="get_code_button">Kod al</string>
   <string name="confirm_button">Doğrula</string>
@@ -499,7 +499,7 @@
   <string name="purchase_error_wallet_block_code_403">Cüzdanınızla ilgili bir sorun var gibi görünüyor. Lütfen bizimle iletişime geçin.</string>
   <string name="purchase_card_error_CVV">Yanlış CVV/CVC</string>
   <string name="error_contac_us_body">Sorun devam ederse lütfen bizimle iletişime geçin.</string>
-  <string name="purchase_error_unverified_wallet">Cüzdanınızı doğruladıktan sonra satın alma işlemini tamamlamayı deneyin.</string>
+  <string name="purchase_error_unverified_wallet">Try to complete the purchase after verifying your wallet.</string>
   <!--Billing address in purchase flow-->
   <string name="purchase_address_title">Faturalandırma adresi</string>
   <string name="purchase_address_address_field">Adres</string>
@@ -839,7 +839,7 @@
   <string name="card_verification_body">Cüzdanınızı doğrulamak için kredi/banka kartınızı kullanın.</string>
   <string name="card_verification_charde_disclaimer">Kartınızdan %s alınır ve kodu doğruladığımızda iade edilir.</string>
   <string name="card_verification_code_title">İşlem bilgilerin bilgilerinden kodu kontrol edin</string>
-  <string name="card_verification_code_body">Kart sağlayıcınız tarafından sağlanan işlem özetinde eşsiz bir kod görünür.</string>
+  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issuer.</string>
   <string name="card_verification_code_example_title">İşlem Özeti Örneği</string>
   <string name="card_verification_code_example_date">İşlem Tarihi</string>
   <string name="card_verification_code_example_description">Açıklama</string>
