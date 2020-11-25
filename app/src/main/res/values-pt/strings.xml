@@ -410,7 +410,7 @@
   <string name="password">Password</string>
   <string name="repeat_password">Repetir password</string>
   <string name="turn_on_button">Ligar</string>
-  <string name="no_thanks_button">Não, obrigado</string>
+  <string name="no_thanks_button">No, thanks</string>
   <string name="remind_later_button">Lembra-me mais tarde</string>
   <string name="get_code_button">Obter código</string>
   <string name="confirm_button">Confirmar</string>
@@ -499,7 +499,7 @@
   <string name="purchase_error_wallet_block_code_403">Parece que algo não está ok com a tua wallet. Por favor, entra em contacto connosco.</string>
   <string name="purchase_card_error_CVV">CVV/CVC errado</string>
   <string name="error_contac_us_body">Se o problema persistir entra em contacto connosco.</string>
-  <string name="purchase_error_unverified_wallet">Tenta completar a compra após verificares a tua wallet.</string>
+  <string name="purchase_error_unverified_wallet">Try to complete the purchase after verifying your wallet.</string>
   <!--Billing address in purchase flow-->
   <string name="purchase_address_title">Morada de faturação</string>
   <string name="purchase_address_address_field">Morada</string>
@@ -839,7 +839,7 @@
   <string name="card_verification_body">Usa o teu cartão de crédito/débito para verificar a tua wallet.</string>
   <string name="card_verification_charde_disclaimer">Vamos cobrar %s no teu cartão, e devolvemos assim que confirmares o código.</string>
   <string name="card_verification_code_title">Verifica o código nos detalhes da transação</string>
-  <string name="card_verification_code_body">Um código único irá aparecer no resumo da transação fornecido pelo emissor teu cartão.</string>
+  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issuer.</string>
   <string name="card_verification_code_example_title">Exemplo do Resumo das Transações</string>
   <string name="card_verification_code_example_date">Data de Trans.</string>
   <string name="card_verification_code_example_description">Descrição</string>
