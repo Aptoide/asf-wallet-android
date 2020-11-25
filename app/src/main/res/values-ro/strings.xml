@@ -410,7 +410,7 @@
   <string name="password">Parolă</string>
   <string name="repeat_password">Repetă parola</string>
   <string name="turn_on_button">Activează</string>
-  <string name="no_thanks_button">Nu, mulțumesc</string>
+  <string name="no_thanks_button">No, thanks</string>
   <string name="remind_later_button">Amintește-mi mai târziu</string>
   <string name="get_code_button">Obține cod</string>
   <string name="confirm_button">Confirmă</string>
@@ -499,7 +499,7 @@
   <string name="purchase_error_wallet_block_code_403">Se pare că ceva nu este în regulă cu portofelul tău. Te rugăm să ne contactezi.</string>
   <string name="purchase_card_error_CVV">CVV/CVC greșit</string>
   <string name="error_contac_us_body">Dacă problema continuă, te rugăm să ne contactezi.</string>
-  <string name="purchase_error_unverified_wallet">Încearcă să finalizezi achiziția după verificarea portofelului tău.</string>
+  <string name="purchase_error_unverified_wallet">Try to complete the purchase after verifying your wallet.</string>
   <!--Billing address in purchase flow-->
   <string name="purchase_address_title">Adresă de facturare</string>
   <string name="purchase_address_address_field">Adresă</string>
@@ -843,7 +843,7 @@
   <string name="card_verification_body">Folosește cardul tău de credit/debit pentru a-ți verifica portofelul.</string>
   <string name="card_verification_charde_disclaimer">Vom debita %s de pe cardul tău și vom rambursa suma imediat ce confirmi codul.</string>
   <string name="card_verification_code_title">Verifică codul în detaliile tranzacției</string>
-  <string name="card_verification_code_body">Un cod unic va apărea în rezumatul tranzacției furnizat de emitentul cardului.</string>
+  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issuer.</string>
   <string name="card_verification_code_example_title">Exemplu de rezumat tranzacție</string>
   <string name="card_verification_code_example_date">Data tranz.</string>
   <string name="card_verification_code_example_description">Descriere</string>
