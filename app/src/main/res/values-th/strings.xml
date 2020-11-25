@@ -410,7 +410,7 @@
   <string name="password">รหัสผ่าน</string>
   <string name="repeat_password">Repeat password</string>
   <string name="turn_on_button">Turn on</string>
-  <string name="no_thanks_button">No,thanks</string>
+  <string name="no_thanks_button">No, thanks</string>
   <string name="remind_later_button">Remind me later</string>
   <string name="get_code_button">Get code</string>
   <string name="confirm_button">ยืนยัน</string>
@@ -499,7 +499,7 @@
   <string name="purchase_error_wallet_block_code_403">มันดูเหมือนว่ามีสิ่งผิกปกติกับกระเป๋าสตางค์ของคุณ โปรดติดต่อเรา</string>
   <string name="purchase_card_error_CVV">CVV/CVC ไม่ถูกต้อง</string>
   <string name="error_contac_us_body">โปรดติดต่อเราหากยังคงมีปัญหา</string>
-  <string name="purchase_error_unverified_wallet">Try to complete the purchese after verifying your wallet.</string>
+  <string name="purchase_error_unverified_wallet">Try to complete the purchase after verifying your wallet.</string>
   <!--Billing address in purchase flow-->
   <string name="purchase_address_title">ที่อยู่เรียกเก็บเงิน</string>
   <string name="purchase_address_address_field">ที่อยู่</string>
@@ -835,7 +835,7 @@
   <string name="card_verification_body">Use your credit/debit card to verify your wallet.</string>
   <string name="card_verification_charde_disclaimer">We\'ll charge %s to your card, and we\'ll refund it once you confirm the code.</string>
   <string name="card_verification_code_title">Check the code in the transaction details</string>
-  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issues.</string>
+  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issuer.</string>
   <string name="card_verification_code_example_title">Example of Transaction Summary</string>
   <string name="card_verification_code_example_date">Trans. Date</string>
   <string name="card_verification_code_example_description">Description</string>
