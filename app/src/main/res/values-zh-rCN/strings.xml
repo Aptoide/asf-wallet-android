@@ -410,7 +410,7 @@
   <string name="password">密码</string>
   <string name="repeat_password">重复密码</string>
   <string name="turn_on_button">开启</string>
-  <string name="no_thanks_button">不，谢谢</string>
+  <string name="no_thanks_button">No, thanks</string>
   <string name="remind_later_button">稍后提醒我</string>
   <string name="get_code_button">获取代码</string>
   <string name="confirm_button">确认</string>
@@ -499,7 +499,7 @@
   <string name="purchase_error_wallet_block_code_403">您的钱包似乎出现了问题。请与我们联系。</string>
   <string name="purchase_card_error_CVV">CVV/CVC错误</string>
   <string name="error_contac_us_body">如果问题仍然存在，请与我们联系。</string>
-  <string name="purchase_error_unverified_wallet">尝试在验证钱包后完成购买。</string>
+  <string name="purchase_error_unverified_wallet">Try to complete the purchase after verifying your wallet.</string>
   <!--Billing address in purchase flow-->
   <string name="purchase_address_title">帐单地址</string>
   <string name="purchase_address_address_field">地址</string>
@@ -835,7 +835,7 @@
   <string name="card_verification_body">使用您的信用卡/借记卡验证钱包。</string>
   <string name="card_verification_charde_disclaimer">我们将向您的银行卡收取%s的费用，一旦您确认代码，我们将立即退款给您。</string>
   <string name="card_verification_code_title">在交易详细信息中查看代码</string>
-  <string name="card_verification_code_body">一个唯一代码将出现在发卡银行提供的交易摘要中。</string>
+  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issuer.</string>
   <string name="card_verification_code_example_title">交易摘要示例</string>
   <string name="card_verification_code_example_date">交易日期</string>
   <string name="card_verification_code_example_description">说明</string>
