@@ -410,7 +410,7 @@
   <string name="password">Пароль</string>
   <string name="repeat_password">Повторите пароль</string>
   <string name="turn_on_button">Включить</string>
-  <string name="no_thanks_button">Нет, спасибо</string>
+  <string name="no_thanks_button">No, thanks</string>
   <string name="remind_later_button">Напомнить позже</string>
   <string name="get_code_button">Получить код</string>
   <string name="confirm_button">Подтвердить</string>
@@ -499,7 +499,7 @@
   <string name="purchase_error_wallet_block_code_403">Похоже, что с вашим кошельком что-то не так. Пожалуйста, свяжитесь с нами.</string>
   <string name="purchase_card_error_CVV">Неверный CVV/CVC</string>
   <string name="error_contac_us_body">Если проблема не исчезнет – пожалуйста, свяжитесь с нами.</string>
-  <string name="purchase_error_unverified_wallet">Попытайтесь завершить покупку после подтверждения вашего кошелька.</string>
+  <string name="purchase_error_unverified_wallet">Try to complete the purchase after verifying your wallet.</string>
   <!--Billing address in purchase flow-->
   <string name="purchase_address_title">Адрес для счёта</string>
   <string name="purchase_address_address_field">Адрес</string>
@@ -847,7 +847,7 @@
   <string name="card_verification_body">Используйте свою кредитную/дебетовую карту, чтобы подтвердить свой кошелек.</string>
   <string name="card_verification_charde_disclaimer">Мы спишем %s с вашей карты и вернём, как только вы подтвердите код.</string>
   <string name="card_verification_code_title">Проверьте код в деталях транзакции</string>
-  <string name="card_verification_code_body">Уникальный код появится в сводке транзакции, предоставленной эмитентом вашей карты.</string>
+  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issuer.</string>
   <string name="card_verification_code_example_title">Пример сводки транзакции</string>
   <string name="card_verification_code_example_date">Дата транз.</string>
   <string name="card_verification_code_example_description">Описание</string>
