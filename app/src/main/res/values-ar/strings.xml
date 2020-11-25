@@ -410,7 +410,7 @@
   <string name="password">كلمة المرور</string>
   <string name="repeat_password">أعد كتابة كلمة المرور</string>
   <string name="turn_on_button">تشغيل</string>
-  <string name="no_thanks_button">لا، شكرًا</string>
+  <string name="no_thanks_button">No, thanks</string>
   <string name="remind_later_button">ذكرني لاحقًا</string>
   <string name="get_code_button">احصل على الرمز</string>
   <string name="confirm_button">تأكيد</string>
@@ -500,7 +500,7 @@
   <string name="purchase_error_wallet_block_code_403">يبدو أن هناك مشكلة ما في محفظتك. يرجى التواصل معنا.</string>
   <string name="purchase_card_error_CVV">رمز تحقق خاطئ</string>
   <string name="error_contac_us_body">إذا استمرت هذه المشكلة، يرجى التواصل معنا.</string>
-  <string name="purchase_error_unverified_wallet">حاول متابعة عملية الشراء بعد التحقق من محفظتك.</string>
+  <string name="purchase_error_unverified_wallet">Try to complete the purchase after verifying your wallet.</string>
   <!--Billing address in purchase flow-->
   <string name="purchase_address_title">عنوان الفوترة</string>
   <string name="purchase_address_address_field">العنوان</string>
@@ -856,7 +856,7 @@
   <string name="card_verification_body">استخدم بطاقة الائتمان للتحقق من محفظتك.</string>
   <string name="card_verification_charde_disclaimer">سنتلقي %s من بطاقتك، وسنعيدها حالما تؤكد لنا الرمز.</string>
   <string name="card_verification_code_title">تفقد الرمز في تفاصيل حركة الدفع</string>
-  <string name="card_verification_code_body">رمز مميز سيظهر في ملخص عملية التحويل التي تظهر في إشعار بطاقتك.</string>
+  <string name="card_verification_code_body">A unique code will appear in the summary of the transaction provided by your card issuer.</string>
   <string name="card_verification_code_example_title">مثال على ملخص إشعار الدفع</string>
   <string name="card_verification_code_example_date">تاريخ التحويل</string>
   <string name="card_verification_code_example_description">الوصف</string>
