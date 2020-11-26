@@ -53,6 +53,6 @@
   <string name="purchase_card_error_not_supported">Ten typ karty jeszcze nie jest obsługiwany. Spróbuj z inną.</string>
   <string name="purchase_card_error_security">Czy jesteś pewien, że to poprawne dane? Spróbuj ponownie.</string>
   <string name="purchase_card_error_wrong_CVV">Twój kod CVV/CVC jest niepoprawny. Spróbuj ponownie.</string>
-  <string name="purchase_card_error_CVV">Wrong CVV/CVC</string>
-  <string name="error_contac_us_body">If the problem persists please contact us.</string>
+  <string name="purchase_card_error_CVV">Nieprawidłowy CVV/CVC</string>
+  <string name="error_contac_us_body">Jeśli problem powróci, skontaktuj się z nami.</string>
 </resources>
