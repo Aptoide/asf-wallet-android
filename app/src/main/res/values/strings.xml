@@ -8,6 +8,9 @@
   <!-- Strings relatedwalletount creation -->
   <string name="prompt_password">Password</string>
   <string name="action_sign_in_short">Create</string>
+  
+  <!--Bottom navigation-->
+  <string name="bottom_navigation_my_wallets">My Wallets</string>
 
   <!-- String related to sending -->
   <string name="prompt_to">To</string>
@@ -608,6 +611,8 @@
   <string name="promotions_tab_poa_title">PLAY &amp; EARN</string>
   <string name="promotions_empty_promotions_body">There are no available promotions at the moment. Come back later!</string>
   <string name="promotions_empty_poa_body">There are no apps with rewards available at the moment. Come back later!</string>
+  <string name="promotions_empty_first_purchase_body">Make your first purchase in a game or app and unlock the promotions we\'ve got for you!</string>
+  <string name="promotions_empty_suggested_games_title">Suggested Games</string>
   <string name="promotions_perks_button">Perks</string>
   <string name="promotions_vouhers_button">Vouchers</string>
 
